@@ -184,9 +184,7 @@ public class MainActivity extends FragmentActivity implements LocationListener {
                     sb.append("&radius=5000");
                     sb.append("&types=" + mPlaceTypeName);
                     sb.append("&sensor=true");
-                    sb.append("&key=AIzaSyCHvcMeK8L81YfyXaxGajn0CLtMylDKYHQ");
-                   // sb.append("&key=AIzaSyCV0L-NJtqbXpFow9VmifCnmyEE9xfoGoc");
-//                    sb.append("&key=AIzaSyCPiBiwgEWuN38nyGcHSBbLjUE6NHjX74Q");
+                    sb.append("&key="Enter your Google Places API for Android");
                     Log.v(TAG, sb.toString());
 
                     // Creating a new non-ui thread task to download Google place json data
