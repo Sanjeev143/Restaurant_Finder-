@@ -40,19 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--<meta-data-->
-            <!--android:name="com.google.android.maps.v2.API_KEY"/>-->
-            <!--android:value="AIzaSyBNXAg_bm1uV94gLPLUwd6zoWJJtoJmkfs" />-->
-        <!-- android:value="AIzaSyBohz7p65pEY2UX42JbvSbhzKJh7Ke8FAM" /> -->
-        <!-- android:value="AIzaSyBEQR9Q-QexsyYflApFTIHDl33PUd9dp5M" /> -->
-
-
-        <!--
-             ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-        -->
-
         <activity
             android:name=".AndroidTabLayoutActivity"
             android:theme="@style/AppTheme" />
@@ -98,7 +85,7 @@
         -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyBNXAg_bm1uV94gLPLUwd6zoWJJtoJmkfs" />
+            android:value="Enter your Google Maps Android API" />
 
     </application>
 
