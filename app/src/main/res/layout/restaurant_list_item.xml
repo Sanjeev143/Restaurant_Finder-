@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        card_view:cardCornerRadius="8dp"
+        android:elevation="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:scaleType="center"
+                android:src="@drawable/plate"
+                android:id="@+id/list_item_image"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".4"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_food_fork_drink_grey600_24dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:layout_height="match_parent"
+                    android:text="Title"
+                    android:id="@+id/list_item_title"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".3">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_map_marker_grey600_18dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:layout_height="match_parent"
+                    android:text="Street"
+                    android:gravity="center_vertical"
+                    android:id="@+id/list_item_street"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".3">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight=".2"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_cellphone_android_grey600_18dp"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight=".8"
+                    android:layout_height="match_parent"
+                    android:text="Phone"
+                    android:gravity="center_vertical"
+                    android:id="@+id/list_item_phone"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:ellipsize="end" />
+            </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
