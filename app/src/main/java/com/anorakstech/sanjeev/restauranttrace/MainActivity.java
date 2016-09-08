@@ -121,9 +121,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
             }
             mGoogleMap.setMyLocationEnabled(true);
 
-
-
-
             // Getting LocationManager object from System Service LOCATION_SERVICE
             LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
@@ -147,11 +144,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 
                 @Override
                 public void onInfoWindowClick(Marker arg0) {
-//                    Intent intent = new Intent(getBaseContext(), PlaceDetailsActivity.class);
-//                    String reference = mMarkerPlaceLink.get(arg0.getId());
-//                    intent.putExtra("reference", reference);
-                    // Create a Uri from an intent string. Use the result to create an Intent.
-
                     String nameofplace = "";
                     nameofplace = arg0.getTitle().toString();
                     Uri gmmIntentUri = Uri.parse("geo:0,0?q=restaurants"+nameofplace);
@@ -160,9 +152,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
                     Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
 // Make the Intent explicit by setting the Google Maps package
                     mapIntent.setPackage("com.google.android.apps.maps");
-
-
-
                     // Starting the Place Details Activity
                     if (mapIntent.resolveActivity(getPackageManager()) != null) {
                         startActivity(mapIntent);
@@ -170,8 +159,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
                     Log.v(TAG, "PlaceDetailsActivity Calling");
                 }
             });
-
-
             // Setting click event lister for the find button
             btnFind.setOnClickListener(new View.OnClickListener() {
 
@@ -200,14 +187,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-
-//        Uri xyz = Uri.parse("geo:32.8,74.7");
-//        Intent mapIntent  = new Intent(Intent.ACTION_MEDIA_BUTTON,xyz);
-//        mapIntent.setPackage("com.google.android.apps.maps");
-//        if(mapIntent.resolveActivity(getPackageManager())!=null)
-//        {
-//            startActivity(mapIntent);
-//        }
     }
 
     /**
@@ -247,8 +226,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
         HttpURLConnection urlConnection = null;
         try {
             URL url = new URL(strUrl);
-
-
             // Creating an http connection to communicate with url
             urlConnection = (HttpURLConnection) url.openConnection();
 
@@ -266,18 +243,16 @@ public class MainActivity extends FragmentActivity implements LocationListener {
             while ((line = br.readLine()) != null) {
                 sb.append(line);
             }
-
+            
             data = sb.toString();
-
             br.close();
-
+            
         } catch (Exception e) {
             Log.v(TAG, e.toString());
         } finally {
             iStream.close();
             urlConnection.disconnect();
         }
-
         return data;
     }
 
@@ -300,9 +275,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
         );
         AppIndex.AppIndexApi.start(client, viewAction);
     }
-
-
-
     /**
      * A class, to download Google Places
      */
@@ -332,7 +304,6 @@ public class MainActivity extends FragmentActivity implements LocationListener {
             parserTask.execute(result);
             Log.v(TAG, result.toString());
         }
-
     }
 
     /**
@@ -408,13 +379,9 @@ public class MainActivity extends FragmentActivity implements LocationListener {
                 {
                     markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.star5));
                 }
-
-
-
-
                 markerOptions.position(latLng);
                 markerOptions.title(name + " : " + vicinity);
-
+                
                 // Placing a marker on the touched position
                 Marker m = mGoogleMap.addMarker(markerOptions);
                 Log.v(TAG, m.toString());
@@ -422,14 +389,10 @@ public class MainActivity extends FragmentActivity implements LocationListener {
                 // Linking Marker id and place reference
                 mMarkerPlaceLink.put(m.getId(), hmPlace.get("reference"));
                 Log.v(TAG, hmPlace.get("place_name").toString());
-
             }
-
         }
-
     }
-
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
